@@ -5,3 +5,9 @@ C:\Users\eahscs\Documents\GitHub\RoverList\RoverList\obj\Debug\RoverList.csprojR
 C:\Users\eahscs\Documents\GitHub\RoverList\RoverList\obj\Debug\RoverList.csproj.CoreCompileInputs.cache
 C:\Users\eahscs\Documents\GitHub\RoverList\RoverList\obj\Debug\RoverList.exe
 C:\Users\eahscs\Documents\GitHub\RoverList\RoverList\obj\Debug\RoverList.pdb
+C:\Users\Connor\Documents\GitHub\RoverList\RoverList\bin\Debug\RoverList.exe.config
+C:\Users\Connor\Documents\GitHub\RoverList\RoverList\bin\Debug\RoverList.exe
+C:\Users\Connor\Documents\GitHub\RoverList\RoverList\bin\Debug\RoverList.pdb
+C:\Users\Connor\Documents\GitHub\RoverList\RoverList\obj\Debug\RoverList.csprojResolveAssemblyReference.cache
+C:\Users\Connor\Documents\GitHub\RoverList\RoverList\obj\Debug\RoverList.exe
+C:\Users\Connor\Documents\GitHub\RoverList\RoverList\obj\Debug\RoverList.pdb

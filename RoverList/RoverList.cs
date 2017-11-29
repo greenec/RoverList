@@ -10,69 +10,103 @@ namespace RoverList
     {
         // Add any variables you need here
         Node tail;
-        
-        public RoverList ()
+
+        public RoverList()
         {
 
         }
 
-        public override int Count => throw new NotImplementedException();
+        public override int Count
+        {
+            get
+            {
+                int count = 0;
+                current = head;
+                while (current != null)
+                {
+                    count++;
+                    current = current.Next;
+                }
+                return count;
+            }
+        }
 
         public override void Add(object data)
         {
-            if(this.head == null)
+            if (head == null)
             {
-                this.head = new Node(data);
-                this.tail = this.head;
-                this.tail.Next = null;
-            } else
-            {
-                this.tail.Next = new Node(data);
-                this.tail = this.tail.Next;
-                this.tail.Next = null;
+                head = new Node(data);
+                tail = head;
             }
+            else
+            {
+                tail.Next = new Node(data);
+                tail = tail.Next;
+            }
+
+            tail.Next = null;
         }
 
         public override void Add(int Position, object data)
         {
-            this.current = this.head;
-            for(int i = 0; i < Position; i++)
+            if (Position == 0)
             {
-                this.current = this.current.Next;
+                Node oldHead = head;
+                head = new Node(data);
+                head.Next = oldHead;
+                return;
             }
-            this.current.Next = new Node(data);
-            this.tail = this.current.Next;
-            this.tail.Next = null;
+            
+            current = ElementAt(Position - 1);
+            Node oldNode = current.Next;
+            current.Next = new Node(data);
+            current.Next = oldNode;
         }
 
         public override void Clear()
         {
-            this.head = null;
+            head = null;
         }
 
         public override Node ElementAt(int Position)
         {
-            this.current = this.head;
+            current = head;
             for (int i = 0; i < Position; i++)
             {
-                this.current = this.current.Next;
+                current = current.Next;
             }
-            return this.current;
+            return current;
         }
 
         public override void ListNodes()
         {
-            this.current = this.head;
-            while(this.current.Next != null)
+            current = head;
+            while (current != null)
             {
-                Console.WriteLine(this.current.Data);
-                this.current = this.current.Next;
+                Console.Write(current.Data + " ");
+                current = current.Next;
             }
+            Console.WriteLine();
         }
 
         public override bool RemoveAt(int Position)
         {
-            throw new NotImplementedException();
+            if (Position >= Count || Position < 0)
+            {
+                return false;
+            }
+
+            if (Position == 0)
+            {
+                head = head.Next;
+            }
+            else
+            {
+                current = ElementAt(Position - 1);
+                current.Next = current.Next.Next;
+            }
+
+            return true;
         }
     }
 }
